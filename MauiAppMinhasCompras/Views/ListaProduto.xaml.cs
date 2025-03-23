@@ -18,7 +18,7 @@ public partial class ListaProduto : ContentPage
     {
 		try
 		{
-			lista.Clear();
+			lista.Clear(); // LIMPAR LISTA AO INICIAR
 			List<Produto> tmp = await App.Db.GetAll();
 
 			tmp.ForEach(i => lista.Add(i));
@@ -82,7 +82,7 @@ public partial class ListaProduto : ContentPage
 		if (confirm)
 		{
 			await App.Db.Delete(p.Id);
-			lista.Remove(p);
+			lista.Remove(p); // TRATATIVA DE DELETAR O ITEM
 
 		}
         }
@@ -96,7 +96,7 @@ public partial class ListaProduto : ContentPage
     {
 		try
 		{
-			Produto p = e.SelectedItem as Produto;
+			Produto p = e.SelectedItem as Produto; //TRATATIVA PARA EDITAR O PRODUTO
 
 			Navigation.PushAsync(new Views.EditarProduto
 				{

@@ -23,7 +23,7 @@ public partial class EditarProduto : ContentPage
                 Preco = Convert.ToDouble(txt_preco.Text) // Captura e converte o preço
             };
 
-            await App.Db.Update(p); // Insere o produto no BD
+            await App.Db.Update(p); // ATUALIZA O PRODUTO NO BD
             await DisplayAlert("Sucesso!", "Registro atualizado", "OK"); // Alerta de sucesso
             await Navigation.PopAsync();
         }
