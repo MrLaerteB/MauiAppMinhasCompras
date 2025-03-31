@@ -29,6 +29,7 @@ namespace MauiAppMinhasCompras.Views // Namespace da página
                 await App.Db.Insert(p); // Insere o produto no BD
                 Produtos.Add(p); // Adiciona o produto à ObservableCollection para atualização da UI
                 await DisplayAlert("Sucesso!", "Registro Inserido", "OK"); // Alerta de sucesso
+                await Navigation.PopAsync();
             }
             catch (Exception ex)
             {
